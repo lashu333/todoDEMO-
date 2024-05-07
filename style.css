@@ -1,0 +1,227 @@
+/* Import a clover-themed font */
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+body {
+ font-family: "Indie Flower", cursive;
+ background-color: #e6f5d0; /* Light green background */
+ color: #1d6042; /* Dark green color */
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ margin: 0;
+ overflow: hidden; /* Prevent scrolling */
+ position: relative; /* Add position relative for the rainbow */
+}
+
+/* Rainbow Animation */
+body::before {
+ content: "";
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ width: 300px;
+ height: 300px;
+ border-radius: 50%;
+ background: linear-gradient(
+   45deg,
+   #ff7eb9,
+   #ffa07a,
+   #ffff00,
+   #00ff00,
+   #00ffff,
+   #7a88ff,
+   #ff00ff
+ );
+ filter: blur(70px);
+ opacity: 0.8; /* Increased opacity for a brighter effect */
+ animation: rainbowGlow 10s infinite linear;
+ z-index: -1; /* Place the rainbow behind other elements */
+}
+
+@keyframes rainbowGlow {
+ 0% {
+   transform: translate(-50%, -50%) rotate(0deg);
+ }
+ 100% {
+   transform: translate(-50%, -50%) rotate(360deg);
+ }
+}
+
+/* Floating Four-Leaf Clovers */
+.clover {
+ mix-blend-mode: hard-light;
+ position: absolute;
+ font-size: 36px; /* Increased font size */
+ animation: floatClover 17.77s infinite cubic-bezier(0.21, 0.33, 0.89, 0.76);
+ content: "🍀🍀🍀🍀"; /* Four-leaf clover emoji */
+}
+
+@keyframes floatClover {
+ 0% {
+   transform: translate(260px, 0) rotate(0deg);
+   opacity: 0.5;
+ }
+ 25% {
+   opacity: 1;
+ }
+ 50% {
+   transform: translate(20px, -200px) rotate(180deg);
+ }
+ 75% {
+   transform: translate(-260px, 0) rotate(0deg);
+   opacity: 1;
+ }
+ 100% {
+   transform: translate(259px, 0) rotate(360deg);
+   opacity: 0.5;
+ }
+}
+
+/* Sparkles */
+.sparkle {
+ position: absolute;
+ font-size: 18px; /* Increased font size */
+ animation: sparkleAnimation 2s infinite linear;
+ content: "✨"; /* Sparkle emoji */
+}
+
+@keyframes sparkleAnimation {
+ 0% {
+   transform: scale(0.5) rotate(0deg);
+   opacity: 0;
+ }
+ 50% {
+   transform: scale(1.5) rotate(180deg); /* Increased scale */
+   opacity: 1;
+ }
+ 100% {
+   transform: scale(0.5) rotate(360deg);
+   opacity: 0;
+ }
+}
+
+/* ... (previous styles) ... */
+/* ... (previous styles) ... */
+#todo-container {
+ background-color: #ffffff;
+ padding: 30px; /* Increased padding */
+ border-radius: 20px; /* Increased border radius */
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased box-shadow */
+ max-width: 600px; /* Increased max-width */
+ width: 100%;
+ animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+ 0% {
+   opacity: 0;
+ }
+ 100% {
+   opacity: 1;
+ }
+}
+
+#header {
+ text-align: center;
+ margin-bottom: 30px; /* Increased margin */
+}
+
+#header h1 {
+ margin: 0;
+ font-size: 36px; /* Increased font size */
+ color: #1d6042; /* Dark green color */
+ text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* White text glow */
+}
+
+#todo-form {
+ display: flex;
+ margin-bottom: 30px; /* Increased margin */
+}
+
+#input-box {
+ flex-grow: 1;
+ padding: 15px; /* Increased padding */
+ border: 2px solid #8bc34a; /* Light green border */
+ border-radius: 10px 0 0 10px; /* Increased border radius */
+ font-family: inherit;
+ font-size: 20px; /* Increased font size */
+ transition: border-color 0.3s ease-in-out;
+}
+
+#input-box:focus {
+ outline: none;
+ border-color: #1d6042; /* Dark green border color */
+}
+
+#input-button {
+ background-color: #8bc34a; /* Light green background color */
+ color: white;
+ border: none;
+ border-radius: 0 10px 10px 0; /* Increased border radius */
+ padding: 15px 30px; /* Increased padding */
+ font-family: inherit;
+ font-size: 20px; /* Increased font size */
+ cursor: pointer;
+ transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+ text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* White text glow */
+}
+
+#input-button:hover {
+ background-color: #76a83a; /* Darker green background color on hover */
+ transform: scale(1.1); /* Increased scale on hover */
+}
+
+#input-button:active {
+ background-color: #689f38; /* Brighter green background color on active */
+ transform: scale(0.9); /* Decreased scale on active */
+}
+
+#list-container {
+ list-style-type: none;
+ padding: 0;
+}
+
+#list-container li {
+ background-color: #e6f5d0; /* Light green background */
+ padding: 15px; /* Increased padding */
+ margin-bottom: 15px; /* Increased margin */
+ border-radius: 10px; /* Increased border radius */
+ display: flex;
+ align-items: center;
+ transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out,
+   box-shadow 0.3s ease-in-out;
+ position: relative;
+ overflow: hidden;
+}
+
+#list-container li:hover {
+ transform: scale(1.05); /* Increased scale on hover */
+ background-color: #d8eebf; /* Darker green background on hover */
+ box-shadow: 0 0 20px rgba(139, 195, 74, 0.5); /* Light green box-shadow on hover */
+}
+
+#list-container li:hover::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: linear-gradient(
+   90deg,
+   rgba(255, 255, 255, 0) 0%,
+   rgba(255, 255, 255, 0.8) 50%,
+   rgba(255, 255, 255, 0) 100%
+ );
+ animation: shimmer 1s infinite;
+}
+#list-container li:before {
+ content: "🍀🍀🍀🍀";
+ margin-right: 10px;
+ animation: spin 2s infinite linear;
+ color: #1d6042; /* Dark green color */
+}
+
+#

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TO-DO List</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+<div id="img-container">
+      <img src="imgs/landon-parenteau-D0pMST46enU-unsplash-min.webp" alt="todo" />
+</div>
+    <!-- create a container for the todo list -->
+    <div id="todo-container">
+      
+      <!-- todo list header -->
+      <div id="header">
+        <h1>To Do List</h1>
+      </div>
+
+      <!-- create input box -->
+      <div id="todo-form">
+        <span class="sparkle">✨</span>
+        <input
+          type="text"
+          class="input-item"
+          name="input_box"
+          id="input-box"
+          placeholder="Add Task"
+        />
+
+
+        <!-- add button -->
+        <button id="input-button" onclick="addTask()">Add</button>
+      </div>
+
+      <!-- task list -->
+      <h2>Tasks</h2>
+      <hr />
+      <div class="counter-container">
+        <div id="task-counters">
+          Completed: <span id="completed-counter">0</span> | Uncompleted:
+          <span id="uncompleted-counter">0</span>
+          | total tasks : <span id="total-counter">0</span>
+          | progress: <span id="progress">0</span>%
+        </div>
+      </div>
+      <ul id="list-container">
+      </ul>
+
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
