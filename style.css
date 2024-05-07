@@ -224,4 +224,63 @@ body::before {
  color: #1d6042; /* Dark green color */
 }
 
-#
+#<div class="checkbox-wrapper-53">
+<label class="container">
+  <input type="checkbox">
+  <div class="checkmark"></div>
+</label>
+</div>
+
+<style>
+.checkbox-wrapper-53 input[type="checkbox"] {
+  visibility: hidden;
+  display: none;
+}
+
+.checkbox-wrapper-53 .container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+}
+
+.checkbox-wrapper-53 .checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+  background-color: #ccc;
+  border-radius: 100%;
+  background: #e8e8e8;
+  box-shadow: 3px 3px 5px #c5c5c5,
+              -3px -3px 5px #ffffff;
+}
+
+.checkbox-wrapper-53 .container input:checked ~ .checkmark {
+  box-shadow: inset 3px 3px 5px #c5c5c5,
+              inset -3px -3px 5px #ffffff;
+}
+
+.checkbox-wrapper-53 .checkmark:after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+}
+
+.checkbox-wrapper-53 .container input:checked ~ .checkmark:after {
+  opacity: 1;
+}
+
+.checkbox-wrapper-53 .container .checkmark:after {
+  left: 0.45em;
+  top: 0.25em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid darkgray;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+  transition: all 250ms;
+}
+</style>
