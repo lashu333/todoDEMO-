@@ -128,7 +128,7 @@ body::before {
   margin: 0;
   font-size: 36px;
   color: #1d6042;
-  text-shadow: 0 0 0.4px #ffd700;
+  text-shadow: 0 0 0.6px #ffd700;
 }
 h2 {
   font-size: 24px;
@@ -137,7 +137,7 @@ h2 {
   padding: 10px 0;
   margin: 20px 0;
   font-weight: bold;
-  text-shadow: 0 0 0.4px #ffd700;
+  text-shadow: 0 0 0.5px #ffd700;
 }
 #todo-form {
   display: flex;
@@ -208,7 +208,7 @@ h2 {
   overflow: hidden;
   font-size: 1.4rem;
   transition-delay: 0.1s;
-  border: gold 0.5px solid;
+  border: gold 0.9px solid;
 }
 
 #list-container li label {
@@ -232,6 +232,18 @@ h2 {
   background-color: #e6f5d0;
   box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
   transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#list-container li .task-time {
+  opacity: 0;
+  font-size: 1.2rem;
+  color: #1d6042;
+  font-weight: bold;
+  text-shadow: 0 0 0.9px #ffd700;
+  transition: all 0.4s ease-in-out;
+}
+#list-container li:hover .task-time {
+  opacity: 1;
 }
 #list-container li:hover .btns {
   opacity: 1;
@@ -511,4 +523,114 @@ h2 {
   border-width: 0 0.15em 0.15em 0;
   transform: rotate(45deg);
   transition: all 250ms;
+}
+
+.counter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  text-shadow: #ff0000 0 0 0.5px;
+  background-color: #77d08a; /* Add a light background to the counter container */
+  border-radius: 10px; /* Round the corners of the counter container */
+  padding: 10px; /* Add some padding to the counter container */
+}
+@media screen and (max-width: 600px) {
+  /* Remove hover effects */
+  #list-container li:hover {
+    transform: none;
+    background-color: inherit;
+    box-shadow: none;
+  }
+
+  #list-container li:hover .task-time {
+    opacity: 1;
+  }
+
+  #list-container li:hover .btns {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #list-container li:hover .edit-btn,
+  #list-container li:hover .delete-btn {
+    scale: 1;
+  }
+
+  #list-container li:hover::before {
+    content: none;
+  }
+
+  /* Make buttons and task time always visible */
+  #list-container li .btns {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  #list-container li .task-time {
+    opacity: 1;
+  }
+
+  /* Increase touch target size */
+  #list-container li .edit-btn,
+  #list-container li .delete-btn {
+    padding: 10px;
+    margin-left: 10px;
+  }
+
+  /* Adjust font sizes and layout for smaller screens */
+  @media screen and (max-width: 600px) {
+    #list-container li {
+      font-size: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    #list-container li .task-time {
+      font-size: 1rem;
+    }
+
+    #list-container li .edit-btn,
+    #list-container li .delete-btn {
+      font-size: 0.9rem;
+    }
+  }
+  .checkbox-wrapper-53 .container .checkmark:after {
+    left: 0.45em;
+    top: 0.25em;
+    width: 0.25em;
+    height: 0.5em;
+    border: solid #5a6c37;
+    border-width: 0 0.15em 0.15em 0;
+    transform: rotate(45deg);
+    transition: all 250ms;
+  }
+
+  .checkbox-wrapper-53 .container .checkmark:after:focus,
+  .checkbox-wrapper-53 .container .checkmark:after:active {
+    background-color: #ddd;
+  }
+
+  .counter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    text-shadow: #ff0000 0 0 0.5px;
+    background-color: #77d08a;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .counter-container:focus,
+  .counter-container:active {
+    background-color: #66b878;
+  }
+  #list-container li.touched {
+    transform: scale(1.1);
+    background-color: #e6f5d0;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+  }
 }
