@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
 :root {
-  --primary-color: #8bc34a; /* Shamrock Green */
-  --secondary-color: #6a804a; /* Forest Moss */
-  --background-color: #87ceeb; /* Sky Blue */
-  --text-color: #fce883; /* Lemon Zest Yellow */
-  --accent-color: #bada55; /* Clover Bloom (optional) */
+  --primary-color: #8bc34a;
+  --secondary-color: #6a804a;
+  --background-color: #87ceeb;
+  --text-color: #fce883;
+  --accent-color: #bada55;
 }
 
 body {
   font-family: "Indie Flower", cursive;
-  background-color: #d0f5d2; /* Light green background */
-  color: #1d6042; /* Dark green color */
+  background-color: #d0f5d2;
+  color: #1d6042;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +21,6 @@ body {
   position: relative;
 }
 
-/* Rainbow Animation */
 body::before {
   content: "";
   position: absolute;
@@ -579,7 +578,6 @@ h2 {
     margin-left: 10px;
   }
 
-  /* Adjust font sizes and layout for smaller screens */
   @media screen and (max-width: 600px) {
     #list-container li {
       font-size: 1.2rem;
@@ -633,4 +631,75 @@ h2 {
     background-color: #e6f5d0;
     box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
   }
+}
+
+#button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#clear-all,
+#check-all,
+#clear-completed {
+  background-color: #8bc34a; /* Slightly darker green */
+  color: #ffffffe9;
+  text-shadow: 0 0 0.9px #e1ff00;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-out,
+    box-shadow 0.2s ease-out, color 0.2s ease-out, text-shadow 0.2s ease-out;
+  margin: 0 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+#clear-all:hover,
+#check-all:hover,
+#clear-completed:hover {
+  background-color: #7cb342;
+  transform: scale(1.01);
+  color: #533300de;
+  box-shadow: 0 0 5px rgba(76, 175, 79, 0.264);
+  text-shadow: 0 0 0.9px #ffd700;
+}
+
+#clear-all:active,
+#check-all:active,
+#clear-completed:active {
+  background-color: #689f38;
+  color: #0d3422;
+  transform: scale(0.98);
+  box-shadow: 0 0 5px rgba(0, 128, 6, 0.5);
+}
+
+#clear-all::before,
+#check-all::before,
+#clear-completed::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    ellipse at center,
+    #d8ff5732 0%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  transform: rotate(-30deg);
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+
+#clear-all:hover::before,
+#check-all:hover::before,
+#clear-completed:hover::before {
+  opacity: 1;
+  transition-duration: 0.3s;
 }
